@@ -2,6 +2,7 @@
 
 typedef unsigned char UC;
 
+
 #define _CHUNK_HEADER_SIZE 0x10000
 struct _chunkHeader { // 0x10000 사이즈 고정
 	UC chunkSignature[8];
@@ -25,6 +26,7 @@ struct _chunkHeader { // 0x10000 사이즈 고정
 	UC commonStringOffsetArray[256];
 	UC templatePtr[128];
 
+	struct _eventHeader* eventHeaders;
 };
 
 struct _fileHeader {
